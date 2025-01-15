@@ -18,10 +18,6 @@ fun PengelolaHalaman (
         startDestination = DestinasiHome.route,
         modifier = modifier
     ) {
-        composable(route = DestinasiHome.route) {
-            HomeScreen (
-                navigateToltemEntry = { navController.navigate(DestinasiInsert.route) }
-            )
-        }
+
     }
 }

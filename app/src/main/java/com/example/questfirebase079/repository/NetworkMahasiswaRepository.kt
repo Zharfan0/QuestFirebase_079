@@ -36,6 +36,10 @@ class NetworkMahasiswaRepository (
         }
     }
 
+    override fun getMahasiswa(nim: String): Flow<Mahasiswa> {
+        TODO("Not yet implemented")
+    }
+
     override fun getMhs(nim: String): Flow<Mahasiswa> = callbackFlow {
         val mhsDocument = firestore.collection("Mahasiswa")
             .document(nim)
@@ -66,6 +70,10 @@ class NetworkMahasiswaRepository (
         } catch (e: Exception) {
             throw Exception("Gagal menghapus data mahasiswa: ${e.message}")
         }
+    }
+
+    override suspend fun updateMahasiswa(mahasiswa: Mahasiswa) {
+        TODO("Not yet implemented")
     }
 
     override suspend fun updateMhs(mahasiswa: Mahasiswa) {
