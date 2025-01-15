@@ -26,4 +26,7 @@ class NetworkMahasiswaRepository (
             mhsCollection.remove()
         }
     }
+
+
 }
+

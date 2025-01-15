@@ -38,6 +38,7 @@ import com.example.questfirebase079.ui.ViewModel.PenyediaViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 
+@JvmOverloads
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
@@ -217,5 +218,17 @@ fun MhsCard(
             )
         }
 
+    }
+}
+
+@Composable
+fun deleteMhs(mahasiswa: Mahasiswa) {
+    viewModelScope.launch {
+        try {
+            repository.deleteMhs(mahasiswa)
+            getMhs()
+        } catch (e: Exception) {
+            mhsUiState = HomeUiState.Error(e)
+        }
     }
 }
