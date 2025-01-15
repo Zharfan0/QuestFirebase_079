@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.questfirebase079.ui.view.HomeScreen
+import com.example.questfirebase079.ui.view.InsertMhsView
 
 @Composable
 fun PengelolaHalaman (
@@ -18,6 +19,18 @@ fun PengelolaHalaman (
         startDestination = DestinasiHome.route,
         modifier = modifier
     ) {
+        composable(route = DestinasiHome.route) {
+            HomeScreen (
+                navigateToltemEntry = { navController.navigate(DestinasiInsert.route) }
+            )
+        }
 
+        composable(route = DestinasiInsert.route) {
+            InsertMhsView(
+                onBack = { navController.popBackStack() },
+                onNavigate = {
+                    navController.navigate(DestinasiHome.route) }
+            )
+        }
     }
 }
