@@ -20,12 +20,21 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.questfirebase079.model.Mahasiswa
+import com.example.questfirebase079.navigation.DestinasiNavigasi
+import com.example.questfirebase079.ui.CustomWidget.CustomTopAppBar
+import com.example.questfirebase079.ui.ViewModel.DetailUiState
+import com.example.questfirebase079.ui.ViewModel.DetailViewModel
+import com.example.questfirebase079.ui.ViewModel.PenyediaViewModel
 
 object DestinasiDetail : DestinasiNavigasi {
     override val route = "detail"
@@ -47,7 +56,7 @@ fun DetailView(
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            CostumeTopAppBar(
+            CustomTopAppBar(
                 title = DestinasiDetail.titleRes,
                 canNavigateBack = true,
                 navigateUp = navigateBack,
@@ -94,6 +103,10 @@ fun DetailView(
                     color = MaterialTheme.colorScheme.error
                 )
             }
+
+            is DetailUiState.Error -> TODO()
+            DetailUiState.Loading -> TODO()
+            is DetailUiState.Success -> TODO()
         }
     }
 }
