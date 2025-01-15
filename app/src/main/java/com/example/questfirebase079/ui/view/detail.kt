@@ -1,3 +1,5 @@
+@file:Suppress("DUPLICATE_LABEL_IN_WHEN")
+
 package com.example.questfirebase079.ui.view
 
 import androidx.compose.foundation.layout.Arrangement

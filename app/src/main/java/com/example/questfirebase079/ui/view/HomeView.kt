@@ -47,7 +47,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.questfirebase079.model.Mahasiswa
-import com.example.questfirebase079.ui.CustomWidget.TopAppBar
+import com.example.questfirebase079.ui.CustomWidget.CustomTopAppBar
 import com.example.questfirebase079.ui.ViewModel.HomeUiState
 import com.example.questfirebase079.ui.ViewModel.HomeViewModel
 import com.example.questfirebase079.ui.ViewModel.PenyediaViewModel
