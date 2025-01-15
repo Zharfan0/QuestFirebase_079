@@ -4,7 +4,7 @@ import com.example.questfirebase079.model.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
 interface MahasiswaRepository{
-    suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
+    suspend fun insertMhs(mahasiswa: Mahasiswa)
 
     //getALlmhs
     fun getAllMahasiswa(): Flow<List<Mahasiswa>>
@@ -18,4 +18,6 @@ interface MahasiswaRepository{
     //updateMhs
     suspend fun updateMahasiswa(mahasiswa: Mahasiswa)
 
+    fun getMhs(nim: String): Flow<Mahasiswa>
+    suspend fun updateMhs(mahasiswa: Mahasiswa)
 }
